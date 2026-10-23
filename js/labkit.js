@@ -256,51 +256,108 @@
 
   /* ---------- Reading and answer fields ---------- */
 
+  /* ---------- "Fill it in for me" ----------
+     Students can type every reading themselves, or let the lab fill readings in so they
+     only press Next step. The choice is remembered in this browser. */
+
+  let autofill = false;
+  try {
+    autofill = localStorage.getItem('vsl-autofill') === '1';
+  } catch (e) {
+    /* Without storage the switch simply starts off. */
+  }
+  const autofillListeners = new Set();
+  const liveFields = new Set();
+
+  function setAutofill(on) {
+    autofill = on;
+    try {
+      localStorage.setItem('vsl-autofill', on ? '1' : '0');
+    } catch (e) {
+      /* ignore */
+    }
+    if (on) for (const f of liveFields) f.prefill();
+    for (const fn of autofillListeners) fn(on);
+  }
+
   let fieldCount = 0;
 
-  // A labelled number box with a Record button. check(value) returns
+  // A labelled number box with a Record button. check(value, attempts) returns
   // {ok: true} to accept, or {ok: false, msg} to explain what is wrong.
+  // Every check must give the answer when attempts reach 3: that is what
+  // "Fill it in for me" uses, by calling check(NaN, Infinity).
   function field({ label, unit, placeholder, check, onAccept, say, button: buttonLabel }) {
     const id = 'f' + ++fieldCount;
     const input = h('input', { id, class: 'num-input', type: 'text', inputmode: 'decimal', autocomplete: 'off', spellcheck: 'false', placeholder });
     const submit = h('button', { type: 'submit', class: 'btn btn-primary' }, buttonLabel || 'Record');
+    const fill = h('button', { type: 'button', class: 'btn btn-quiet btn-small' }, 'Fill it in for me');
     const form = h('form', { class: 'reading-field', novalidate: true },
       h('label', { for: id }, label),
-      h('div', { class: 'input-row' }, input, unit ? h('span', { class: 'unit' }, unit) : null, submit));
+      h('div', { class: 'input-row' }, input, unit ? h('span', { class: 'unit' }, unit) : null, submit),
+      h('div', null, fill));
     let attempts = 0;
+
+    const answer = () => {
+      const r = check(NaN, Infinity);
+      return r && r.ok ? r : null;
+    };
+    const accept = (result, value) => {
+      if (result.value !== undefined) input.value = result.value;
+      input.disabled = true;
+      submit.disabled = true;
+      fill.disabled = true;
+      liveFields.delete(api);
+      if (result.msg) say(result.msg, result.tone || 'good');
+      onAccept(result.accepted !== undefined ? result.accepted : value, attempts);
+    };
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (input.disabled) return;
       const value = parseNumber(input.value);
       if (!Number.isFinite(value)) {
-        say('Type a number, for example 12.35. You can write small numbers like 2.5e-3 or 2.5 x 10^-3.', 'warn');
+        say('Type a number, for example 12.35, or press “Fill it in for me”.', 'warn');
         input.focus();
         return;
       }
       attempts += 1;
       const result = check(value, attempts);
-      if (result.ok) {
-        if (result.value !== undefined) input.value = result.value;
-        input.disabled = true;
-        submit.disabled = true;
-        if (result.msg) say(result.msg, result.tone || 'good');
-        onAccept(result.accepted !== undefined ? result.accepted : value, attempts);
-      } else {
+      if (result.ok) accept(result, value);
+      else {
         say(result.msg || 'Not quite. Check your working and try again.', result.tone || 'bad');
         input.select();
       }
     });
-    return {
+    fill.addEventListener('click', () => {
+      const r = answer();
+      if (!r || input.disabled) return;
+      accept({ ...r, tone: 'info' }, r.accepted);
+    });
+
+    const api = {
       el: form,
       input,
+      // With the switch on, the right value is already in the box and the button says Next step.
+      prefill() {
+        if (input.disabled) return;
+        const r = answer();
+        if (!r) return;
+        input.value = r.value !== undefined ? r.value : String(r.accepted);
+        submit.textContent = 'Next step';
+      },
       focus() {
-        if (!coarsePointer) input.focus({ preventScroll: true });
+        if (autofill) submit.focus({ preventScroll: true });
+        else if (!coarsePointer) input.focus({ preventScroll: true });
       },
       disable(flag) {
         input.disabled = flag;
         submit.disabled = flag;
+        fill.disabled = flag;
       },
     };
+    liveFields.add(api);
+    if (autofill) api.prefill();
+    return api;
   }
 
   /* ---------- Magnified scale (burette or ruler) ---------- */
@@ -396,8 +453,8 @@
     return nf * p;
   }
 
-  function niceTicks(min, max, count) {
-    const step = niceStep(max - min, count);
+  function niceTicks(min, max, count, fixedStep) {
+    const step = fixedStep || niceStep(max - min, count);
     const out = [];
     for (let v = Math.ceil(min / step - 1e-9) * step; v <= max + step * 1e-6; v += step) out.push(round(v, 10));
     return { ticks: out, step };
@@ -416,7 +473,7 @@
   }
 
   class Graph {
-    constructor({ title, xLabel, yLabel, xDomain, yDomain, describe }) {
+    constructor({ title, xLabel, yLabel, xDomain, yDomain, xStep, yStep, describe }) {
       this.W = 440;
       this.H = 320;
       this.m = { t: 16, r: 18, b: 50, l: 58 };
@@ -424,6 +481,8 @@
       this.yLabel = yLabel;
       this.xDomain = xDomain || [0, 1];
       this.yDomain = yDomain || [0, 1];
+      this.xStep = xStep;
+      this.yStep = yStep;
       this.describe = describe || ((p) => [`${p.x}`, `${p.y}`]);
       this.points = [];
       this.lines = [];
@@ -452,8 +511,8 @@
     render() {
       const { W, H, m } = this;
       const out = [];
-      const xt = niceTicks(this.xDomain[0], this.xDomain[1], 6);
-      const yt = niceTicks(this.yDomain[0], this.yDomain[1], 6);
+      const xt = niceTicks(this.xDomain[0], this.xDomain[1], 6, this.xStep);
+      const yt = niceTicks(this.yDomain[0], this.yDomain[1], 6, this.yStep);
       const xdp = decimalsFor(xt.step);
       const ydp = decimalsFor(yt.step);
       for (const x of xt.ticks) {
@@ -594,8 +653,17 @@
   /* ---------- Page scaffold ---------- */
 
   // Finds the standard containers on a practical page and wires up the guide.
-  function setupLab({ id, steps, items }) {
+  function setupLab({ id, steps, items, guide: guideUrl, objectives }) {
     const say = createFeedback(document.getElementById('feedback'));
+    const head = document.querySelector('.lab-head');
+    if (head) {
+      const box = h('input', { type: 'checkbox', checked: autofill, onchange: (e) => setAutofill(e.target.checked) });
+      head.append(
+        objectives ? h('details', { class: 'lab-objectives' }, h('summary', null, 'Learning objectives'), h('ul', null, objectives.map((o) => h('li', null, o)))) : null,
+        h('div', { class: 'lab-tools' },
+          h('label', { class: 'switch' }, box, 'Fill in readings for me'),
+          guideUrl ? h('a', { href: guideUrl }, 'Practical guide, key words and questions') : null));
+    }
     const guide = new Guide({
       steps,
       card: document.getElementById('step-card'),
@@ -607,10 +675,10 @@
     for (const [name, el] of Object.entries(items || {})) {
       clickable(el, el.dataset.label || name, () => guide.clickItem(name));
     }
-    return { guide, say, finish: (content) => finishLab(id, guide, content) };
+    return { guide, say, finish: (content) => finishLab(id, guide, { guideUrl, ...content }) };
   }
 
-  function finishLab(id, guide, { title, summary, rows }) {
+  function finishLab(id, guide, { title, summary, rows, guideUrl }) {
     markComplete(id);
     const card = guide.card;
     card.classList.add('finish');
@@ -619,8 +687,9 @@
       summary ? h('p', { class: 'step-text' }, summary) : null,
       rows ? h('dl', null, rows.map(([k, v]) => [h('dt', null, k), h('dd', null, v)])) : null,
       h('div', { class: 'btn-row' },
-        h('button', { type: 'button', class: 'btn btn-primary', onclick: () => location.reload() }, 'Do it again with new values'),
-        h('a', { class: 'btn', href: '../index.html' }, 'Back to all labs'))
+        guideUrl ? h('a', { class: 'btn btn-primary', href: guideUrl }, 'Check your understanding') : null,
+        h('button', { type: 'button', class: 'btn' + (guideUrl ? '' : ' btn-primary'), onclick: () => location.reload() }, 'Do it again with new values'),
+        h('a', { class: 'btn', href: '../index.html' }, 'All practicals'))
     );
     card.querySelector('h2').focus({ preventScroll: true });
   }
@@ -630,6 +699,8 @@
     rand, clamp, lerp, gauss, round, fmt, fmtSci, parseNumber, near,
     tween, wait, timeScale, reduceMotion,
     createFeedback, Guide, field, Magnifier,
+    isAutofill: () => autofill,
+    onAutofill: (fn) => autofillListeners.add(fn),
     Graph, niceDomain, fitLine, smoothCurve,
     completedLabs, markComplete, setupLab,
   };
