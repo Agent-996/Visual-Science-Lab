@@ -360,13 +360,51 @@
     return api;
   }
 
+  /* ---------- Multiple choice with "Fill it in for me" ---------- */
+
+  function shuffled(list) {
+    const a = list.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // options[0] is the right answer; the buttons are shown in a random order.
+  function choice({ question, options, say, onDone, hint, right }) {
+    const letters = 'ABCDEF';
+    let done = false;
+    const buttons = shuffled(options).map((o, i) => h('button', { type: 'button', class: 'option', onclick: () => pick(o) },
+      h('span', { class: 'letter' }, letters[i]), h('span', null, o)));
+    function pick(o, auto) {
+      if (done) return;
+      const b = buttons.find((x) => x.lastChild.textContent === o);
+      if (o === options[0]) {
+        done = true;
+        b.classList.add('right');
+        for (const x of buttons) x.disabled = true;
+        fill.disabled = true;
+        say(right || 'Correct.', auto ? 'info' : 'good');
+        onDone(o);
+      } else {
+        b.classList.add('wrong');
+        b.disabled = true;
+        say(hint || 'Not quite. Look at your results again.', 'warn');
+      }
+    }
+    const fill = h('button', { type: 'button', class: 'btn btn-quiet btn-small', onclick: () => pick(options[0], true) }, 'Fill it in for me');
+    if (autofill) setTimeout(() => pick(options[0], true), 400 / timeScale);
+    return h('div', { class: 'question' }, h('p', { class: 'q-text' }, question), h('div', { class: 'options' }, buttons), h('div', null, fill));
+  }
+
   /* ---------- Magnified scale (burette or ruler) ---------- */
 
   let clipCount = 0;
 
   class Magnifier {
     // kind: 'burette' (liquid with a meniscus) or 'ruler' (a pointer).
-    constructor({ kind, label, span, minor, major, labelEvery, min, max, liquid }) {
+    constructor({ kind, label, caption, span, minor, major, labelEvery, min, max, liquid }) {
       this.o = { kind, span, minor, major, labelEvery, min, max, liquid: liquid || '#cfe6f5' };
       this.W = 170;
       this.H = 230;
@@ -375,7 +413,7 @@
       this.svg = s('svg', { viewBox: `0 0 ${this.W} ${this.H}`, role: 'img', 'aria-label': label },
         s('defs', null, s('clipPath', { id: clipId }, s('rect', { x: 0, y: 0, width: this.W, height: this.H, rx: 10 }))),
         this.layer);
-      this.el = h('figure', { class: 'magnifier' }, this.svg, h('figcaption', null, 'Magnified view'));
+      this.el = h('figure', { class: 'magnifier' }, this.svg, h('figcaption', null, caption || 'Magnified view'));
       this.value = undefined;
     }
 
@@ -415,6 +453,26 @@
           parts.push(s('line', { x1: x0, x2: x0 + len, y1: yy, y2: yy, stroke: '#1f2a33', 'stroke-width': isMajor ? 1.6 : 1 }));
           if (k % labelStep === 0) {
             parts.push(s('text', { x: x0 + len + 5, y: yy + 5, fill: '#1f2a33', 'font-size': 15, 'font-family': 'Source Sans 3, Segoe UI, sans-serif', 'font-weight': 600 }, String(Math.round(v))));
+          }
+        }
+      } else if (kind === 'thermometer') {
+        // The scale increases upwards; the red liquid fills up to the reading.
+        const yu = (v) => H / 2 - (v - centre) * ppu;
+        parts.push(s('rect', { x: 34, y: -10, width: 56, height: H + 20, fill: '#f4f8fb', stroke: '#9fb4c2', 'stroke-width': 2 }));
+        if (value !== null) {
+          parts.push(s('rect', { x: 54, y: yu(value), width: 16, height: H + 20, fill: '#d33a3a' }));
+          parts.push(s('rect', { x: 54, y: yu(value) - 1, width: 16, height: 3, rx: 1.5, fill: '#a52020' }));
+        }
+        for (let k = first; k <= last; k++) {
+          const v = k * minor;
+          if (v < min - 1e-9 || v > max + 1e-9) continue;
+          const yy = yu(v);
+          const isMajor = k % majorEvery === 0;
+          const isHalf = !isMajor && k % halfEvery === 0;
+          const len = isMajor ? 26 : isHalf ? 18 : 10;
+          parts.push(s('line', { x1: 90, x2: 90 + len, y1: yy, y2: yy, stroke: '#1f2a33', 'stroke-width': isMajor ? 1.6 : 1 }));
+          if (k % labelStep === 0) {
+            parts.push(s('text', { x: 90 + len + 4, y: yy + 5, fill: '#1f2a33', 'font-size': 15, 'font-family': 'Source Sans 3, Segoe UI, sans-serif', 'font-weight': 600 }, String(Math.round(v))));
           }
         }
       } else {
@@ -698,7 +756,7 @@
     h, s, button, clickable,
     rand, clamp, lerp, gauss, round, fmt, fmtSci, parseNumber, near,
     tween, wait, timeScale, reduceMotion,
-    createFeedback, Guide, field, Magnifier,
+    createFeedback, Guide, field, choice, shuffled, Magnifier,
     isAutofill: () => autofill,
     onAutofill: (fn) => autofillListeners.add(fn),
     Graph, niceDomain, fitLine, smoothCurve,

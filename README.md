@@ -14,12 +14,24 @@ Every practical has its own page with:
 - a prediction question, what you should find, and (for some) a fill-the-gap conclusion
 - check-your-understanding questions with a score
 
-Practicals marked **Interactive** also have a virtual lab bench where students use the equipment and take their own readings:
+Every practical page also has two activities built from its data: **pick the equipment** from a tray (with items from other practicals mixed in) and **put the method in order**.
 
-| Interactive practical | Grade · Unit | Codes |
+Interactive versions come in two kinds:
+
+**Virtual labs**: a lab bench where students use the equipment and take their own readings, with a results table and graph.
+
+| Virtual lab | Grade · Unit | Codes |
 | --- | --- | --- |
-| [Neutralisation drop by drop](labs/neutralisation.html) | Grade 6 · Unit 8 Changes to materials | 7Cc.04, 7TWSa.02 |
-| [Weight and mass with a newtonmeter](labs/weight-and-mass.html) | Grade 6 · Unit 3 Forces and energy | 7Pf.03, 7TWSc.04, 7TWSa.05 |
+| [Weight and mass with a newtonmeter](labs/weight-and-mass.html) | Grade 6 · 3 Forces and energy | 7Pf.03 |
+| [Cooling curve of stearic acid](labs/cooling-curve.html) | Grade 6 · 2 Materials and their structure | 7Cm.06 |
+| [Yeast activity at different temperatures](labs/yeast-temperature.html) | Grade 6 · 7 Microorganisms in the environment | 7Be.01 |
+| [Neutralisation drop by drop](labs/neutralisation.html) | Grade 6 · 8 Changes to materials | 7Cc.04 |
+| [Current in a series circuit](labs/series-current.html) | Grade 6 · 9 Electricity | 7Pe.03 |
+| [Diffusion rate and temperature](labs/diffusion-temperature.html) | Grade 7 · 3 Forces and energy | 8Pf.07 |
+| [Refraction through a glass block](labs/refraction.html) | Grade 7 · 6 Light | 8Ps.02 |
+| [Crater formation](labs/craters.html) | Grade 7 · 6 Light | 8ESs.02 |
+
+**Interactive slides**: the earlier Virtual Science Lab (in `classic/`) has 31 five-slide activities (aim, predict, do it, conclude, check). Each opens directly from its practical page.
 
 In the interactive labs, every answer box has a **Fill it in for me** button. There is also a **Fill in readings for me** switch, so students can move through with **Next step** without typing.
 
@@ -54,13 +66,16 @@ js/data/grade6.js       the 79 Grade 6 practicals (objectives, key words, method
 js/data/grade7.js       the 73 Grade 7 practicals
 js/home.js              draws the list of practicals
 js/practical.js         draws one practical's page
-js/labkit.js            toolkit for interactive labs: step guide, answer checking, magnified scales, graphs
-js/labs/*.js            one script per interactive lab
-labs/*.html             one page per interactive lab
+js/labkit.js            toolkit for virtual labs: step guide, answer checking, magnified scales, graphs
+js/investigate.js       a reusable investigation bench (change a variable, measure, table, graph, conclusion)
+js/sims/*.js            virtual labs built on the investigation bench (one short file each)
+js/labs/*.js            virtual labs with their own custom steps
+labs/*.html             one page per virtual lab
+classic/index.html      the earlier Virtual Science Lab slide activities
 ```
 
 To change a practical's text, edit its entry in `js/data/grade6.js` or `js/data/grade7.js`. In `check` and `predict` questions, the first option is the right answer; the page shuffles the options.
 
-To add an interactive lab, copy one of the pages in `labs/` and its script in `js/labs/`, change the steps and the drawing, then add `"sim": "labs/your-lab.html"` to the practical's entry in the data file.
+To add a virtual lab for an investigation, copy one of the files in `js/sims/` (for example `diffusion-temperature.js`): describe the scene, the values of the variable you change, what happens in one measurement and the conclusion question. Copy its page in `labs/`, then add `"sim": "labs/your-lab.html"` to the practical's entry in the data file. Labs that need their own sequence of steps live in `js/labs/`.
 
 Adding `?speed=4` to a lab's address makes the simulation run four times faster, which helps when testing.

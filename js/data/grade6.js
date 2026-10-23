@@ -1050,7 +1050,8 @@ VSL.add([
      "To keep it clean"
     ]
    }
-  ]
+  ],
+  "sim": "labs/cooling-curve.html"
  },
  {
   "id": "g6-evaporation",
@@ -4668,7 +4669,8 @@ VSL.add([
      "The sugar is melting"
     ]
    }
-  ]
+  ],
+  "sim": "labs/yeast-temperature.html"
  },
  {
   "id": "g6-foodweb",
@@ -5651,7 +5653,8 @@ VSL.add([
      "Without a cell"
     ]
    }
-  ]
+  ],
+  "sim": "labs/series-current.html"
  },
  {
   "id": "g6-cells",

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Crater formation · Visual Science Lab</title>
+  <meta name="description" content="Grade 7 virtual practical: drop a marble into flour from different heights, measure the craters and find the pattern.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-subject="physics">
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#357a28"/><path d="M12.5 6.5h7M14 6.5v7.2L8.4 23a2.4 2.4 0 0 0 2.1 3.5h11a2.4 2.4 0 0 0 2.1-3.5L18 13.7V6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.3 20.5h11.4l1.9 3.3a1.3 1.3 0 0 1-1.1 2H9.5a1.3 1.3 0 0 1-1.1-2z" fill="#b7e486"/></svg>Visual Science Lab</a>
+      <a class="nav-link" href="../index.html">All practicals</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="lab-head">
+      <div class="title-row"><h1>Crater formation</h1><span class="subject-tag">Grade 7 · Physics</span></div>
+      <p class="aim"><strong>Aim:</strong> investigate how the height a marble is dropped from affects the size of the crater it makes.</p>
+      
+    </div>
+
+    <div class="lab-grid">
+      <div class="bench-col">
+        <div class="bench" id="bench"></div>
+      </div>
+
+      <div class="side-col">
+        <section class="card step-card" id="step-card"></section>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+
+        <section class="card" aria-labelledby="results-title">
+          <h2 id="results-title">Results</h2>
+          <div class="table-scroll"><table class="data" id="results-table"></table></div>
+          <p class="table-note">Each height is repeated three times. The mean is worked out for you.</p>
+          <div id="graph"></div>
+          <div id="calc-list"></div>
+        </section>
+
+        <details class="card method" open>
+          <summary>Method</summary>
+          <ol id="method-list"></ol>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/labkit.js"></script>
+  <script src="../js/investigate.js"></script>
+  <script src="../js/sims/craters.js"></script>
+</body>
+</html>

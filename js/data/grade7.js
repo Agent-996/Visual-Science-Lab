@@ -2001,7 +2001,8 @@ VSL.add([
      "The time"
     ]
    }
-  ]
+  ],
+  "sim": "labs/diffusion-temperature.html"
  },
  {
   "id": "g7-quadrat",
@@ -3304,7 +3305,8 @@ VSL.add([
      "is absorbed"
     ]
    }
-  ]
+  ],
+  "sim": "labs/refraction.html"
  },
  {
   "id": "g7-apparentdepth",
@@ -3659,7 +3661,8 @@ VSL.add([
      "A smaller marble"
     ]
    }
-  ]
+  ],
+  "sim": "labs/craters.html"
  },
  {
   "id": "g7-scalemodel",
