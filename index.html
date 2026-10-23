@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Visual Science Lab</title>
+  <meta name="description" content="Free virtual science practicals for GCSE students. Use lab equipment in your browser, take your own readings and analyse the results, step by step.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#357a28"/><path d="M12.5 6.5h7M14 6.5v7.2L8.4 23a2.4 2.4 0 0 0 2.1 3.5h11a2.4 2.4 0 0 0 2.1-3.5L18 13.7V6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.3 20.5h11.4l1.9 3.3a1.3 1.3 0 0 1-1.1 2H9.5a1.3 1.3 0 0 1-1.1-2z" fill="#b7e486"/></svg>Visual Science Lab</a>
+      <a class="nav-link" href="#labs">Labs</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Science practicals you can do in your browser</h1>
+      <p>Set up the equipment, take your own readings and work out the results, one step at a time. Made for GCSE students (ages 14–16) and the parents helping them revise.</p>
+    </section>
+
+    <ol class="how">
+      <li><div><strong>Follow the method</strong><span>Each step says what to do and why it matters.</span></div></li>
+      <li><div><strong>Use the equipment</strong><span>Fill a burette, hang masses, weigh samples, and read the scales yourself.</span></div></li>
+      <li><div><strong>Analyse your results</strong><span>Fill in a results table, plot a graph and check each calculation.</span></div></li>
+    </ol>
+
+    <div class="filters" id="labs">
+      <h2>Labs</h2>
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="biology" aria-pressed="false">Biology</button>
+      <button class="chip" type="button" data-filter="chemistry" aria-pressed="false">Chemistry</button>
+      <button class="chip" type="button" data-filter="physics" aria-pressed="false">Physics</button>
+    </div>
+
+    <div class="lab-cards">
+      <article class="lab-card" data-subject="chemistry" data-lab="titration">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 320 180">
+            <rect width="320" height="180" fill="#eeecfa"/>
+            <rect x="0" y="160" width="320" height="20" fill="#ddd8f3"/>
+            <rect x="214" y="14" width="6" height="146" rx="2" fill="#9a93c9"/>
+            <rect x="160" y="40" width="58" height="5" rx="2" fill="#9a93c9"/>
+            <rect x="153" y="12" width="14" height="100" rx="2" fill="#fff" stroke="#7d74b8" stroke-width="2"/>
+            <rect x="155" y="40" width="10" height="70" fill="#c9e2f3"/>
+            <path d="M156 112h8l-2.5 18h-3z" fill="#fff" stroke="#7d74b8" stroke-width="2"/>
+            <rect x="148" y="114" width="24" height="5" rx="2" fill="#5b4bc8"/>
+            <path d="M150 134h20v8l20 16H130l20-16z" fill="#fff" stroke="#7d74b8" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M136 153l15-11h18l15 11z" fill="#e0479e"/>
+            <rect x="122" y="158" width="76" height="4" rx="1" fill="#fff" stroke="#c9c4ea"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="subject-tag">Chemistry</span>
+          <h3>Acid–alkali titration</h3>
+          <p>Use a burette and pipette to find the concentration of sodium hydroxide. Choose an indicator, spot the end point and get concordant results.</p>
+          <div class="meta"><span>About 20 minutes</span><span>Burette, pipette, indicators</span></div>
+          <div class="foot">
+            <a class="btn btn-primary" href="labs/titration.html">Start practical</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="lab-card" data-subject="physics" data-lab="hookes-law">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 320 180">
+            <rect width="320" height="180" fill="#fbf1e6"/>
+            <rect x="0" y="160" width="320" height="20" fill="#f3dfc8"/>
+            <rect x="196" y="12" width="6" height="148" rx="2" fill="#c49a73"/>
+            <rect x="120" y="18" width="80" height="5" rx="2" fill="#c49a73"/>
+            <path d="M140 23v6l9 4-18 4 18 4-18 4 18 4-18 4 18 4-18 4 18 4-9 4v6" fill="none" stroke="#7c5b3b" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M144 85h21" stroke="#c0392b" stroke-width="2.5"/>
+            <rect x="165" y="20" width="16" height="132" rx="2" fill="#fff3d6" stroke="#c49a73"/>
+            <path d="M165 34h6M165 48h4M165 62h6M165 76h4M165 90h6M165 104h4M165 118h6M165 132h4" stroke="#7c5b3b" stroke-width="1.2"/>
+            <path d="M140 85v8" stroke="#7c5b3b" stroke-width="2"/>
+            <rect x="128" y="93" width="24" height="7" rx="1.5" fill="#d9a441" stroke="#a8520a"/>
+            <rect x="128" y="100" width="24" height="7" rx="1.5" fill="#d9a441" stroke="#a8520a"/>
+            <rect x="128" y="107" width="24" height="7" rx="1.5" fill="#d9a441" stroke="#a8520a"/>
+            <rect x="120" y="157" width="96" height="5" rx="2" fill="#8a6a4c"/>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="subject-tag">Physics</span>
+          <h3>Force and extension of a spring</h3>
+          <p>Hang masses on a spring and read a pointer against a ruler. Plot force against extension, find the limit of proportionality and the spring constant.</p>
+          <div class="meta"><span>About 15 minutes</span><span>Spring, ruler, slotted masses</span></div>
+          <div class="foot">
+            <a class="btn btn-primary" href="labs/hookes-law.html">Start practical</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="lab-card" data-subject="biology" data-lab="osmosis">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 320 180">
+            <rect width="320" height="180" fill="#e7f3ee"/>
+            <rect x="0" y="160" width="320" height="20" fill="#d3e8de"/>
+            <rect x="70" y="80" width="180" height="7" rx="2" fill="#b98e5a"/>
+            <rect x="66" y="150" width="188" height="12" rx="2" fill="#a87d4a"/>
+            <g fill="#d6ebf5" stroke="#6f97a8" stroke-width="2">
+              <path d="M88 40v100a9 9 0 0 0 18 0V40"/>
+              <path d="M126 40v100a9 9 0 0 0 18 0V40"/>
+              <path d="M164 40v100a9 9 0 0 0 18 0V40"/>
+              <path d="M202 40v100a9 9 0 0 0 18 0V40"/>
+            </g>
+            <g fill="#efe1b4" stroke="#c2a867">
+              <rect x="92.5" y="110" width="9" height="34" rx="3.5"/>
+              <rect x="130.5" y="114" width="9" height="30" rx="3.5"/>
+              <rect x="168.5" y="118" width="9" height="26" rx="3.5"/>
+              <rect x="207" y="121" width="8" height="23" rx="3.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="subject-tag">Biology</span>
+          <h3>Osmosis in potato</h3>
+          <p>Cut and weigh potato cylinders, leave them in sugar solutions for 24 hours, then use the change in mass to estimate the concentration inside potato cells.</p>
+          <div class="meta"><span>About 15 minutes</span><span>Cork borer, balance, boiling tubes</span></div>
+          <div class="foot">
+            <a class="btn btn-primary" href="labs/osmosis.html">Start practical</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>Visual Science Lab: visual labs for practical alternatives.</span>
+      <span>Works on phones, tablets and computers. Nothing to install.</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var chips = document.querySelectorAll('.chip');
+      var cards = document.querySelectorAll('.lab-card');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var f = chip.getAttribute('data-filter');
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+          cards.forEach(function (card) { card.hidden = f !== 'all' && card.getAttribute('data-subject') !== f; });
+        });
+      });
+      var done = {};
+      try { done = JSON.parse(localStorage.getItem('vsl-completed') || '{}') || {}; } catch (e) { done = {}; }
+      cards.forEach(function (card) {
+        if (!done[card.getAttribute('data-lab')]) return;
+        var badge = document.createElement('span');
+        badge.className = 'done-badge';
+        badge.textContent = '✓ Completed';
+        card.querySelector('.foot').appendChild(badge);
+      });
+    })();
+  </script>
+</body>
+</html>
