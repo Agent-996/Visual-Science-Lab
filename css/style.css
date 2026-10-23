@@ -659,3 +659,34 @@ table.data .muted { color: var(--ink-3); }
 .uichart button:hover:not(:disabled) { border-color: var(--ink); }
 .uichart button:disabled { cursor: default; opacity: 0.85; }
 .uichart button.picked { border-color: var(--ink); box-shadow: 0 0 0 2px var(--surface) inset; }
+
+/* Practical page activities: pick the equipment, order the method */
+.activity { display: flex; flex-direction: column; gap: 10px; }
+.p-body .card > h2 small { margin-left: auto; padding: 2px 9px; border-radius: 999px; background: var(--brand-soft); color: var(--brand-strong); font: 600 0.72rem/1.4 var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; }
+.tray { display: flex; flex-wrap: wrap; gap: 8px; }
+.pick {
+  appearance: none; cursor: pointer; min-height: 40px; padding: 7px 14px; border-radius: 10px;
+  border: 1.5px solid var(--line-2); background: var(--surface); color: var(--ink); font: 600 0.95rem var(--font-body);
+}
+.pick[aria-pressed="true"] { border-color: var(--subject); background: color-mix(in srgb, var(--subject) 12%, var(--surface)); }
+.pick[aria-pressed="true"]::before { content: "✓ "; color: var(--subject); }
+.pick.ok { border-color: var(--good); background: var(--good-soft); }
+.pick.bad { border-color: var(--bad); background: var(--bad-soft); }
+.pick.missed { border-style: dashed; border-color: var(--warn); }
+.order-list { margin: 0; padding-left: 1.6em; display: flex; flex-direction: column; gap: 6px; min-height: 8px; }
+.order-list:empty { display: none; }
+.order-list li::marker { font: 700 0.95rem var(--font-display); color: var(--subject); }
+.order-pool { display: flex; flex-direction: column; gap: 6px; padding: 10px; border: 1.5px dashed var(--line-2); border-radius: 10px; background: var(--surface-2); }
+.order-pool:empty { display: none; }
+.order-step {
+  appearance: none; cursor: pointer; width: 100%; text-align: left; padding: 9px 12px; min-height: 44px;
+  border: 1.5px solid var(--line-2); border-radius: 10px; background: var(--surface); color: var(--ink); font: 500 0.97rem var(--font-body);
+}
+.order-step:hover { border-color: var(--ink-3); }
+.order-step.placed { border-color: color-mix(in srgb, var(--subject) 45%, var(--line-2)); }
+.order-step.ok { border-color: var(--good); background: var(--good-soft); }
+.order-step.bad { border-color: var(--bad); background: var(--bad-soft); }
+.pill-slides { background: #2563d4; border-color: #2563d4; color: #fff; }
+.slides-cta { border-color: #2563d4; background: #e6eefc; }
+.slides-cta .btn-primary { background: #2563d4; border-color: #2563d4; }
+.slides-cta .btn-primary:hover:not(:disabled) { background: #1c4fae; border-color: #1c4fae; }

@@ -107,7 +107,8 @@ VSL.add([
      "Cell membrane"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-microscope"
  },
  {
   "id": "g6-onion",
@@ -972,7 +973,8 @@ VSL.add([
      "Not moving"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-heating"
  },
  {
   "id": "g6-cooling",
@@ -1554,7 +1556,8 @@ VSL.add([
      "Many mixed substances"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-ironsulfur"
  },
  {
   "id": "g6-sandsalt",
@@ -2082,7 +2085,8 @@ VSL.add([
      "Mass"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-parachute"
  },
  {
   "id": "g6-feathercoin",
@@ -2389,7 +2393,8 @@ VSL.add([
      "Sound store"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-bounce"
  },
  {
   "id": "g6-wastedheat",
@@ -2771,7 +2776,8 @@ VSL.add([
      "Eat the same food"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-key"
  },
  {
   "id": "g6-buildkey",
@@ -3059,7 +3065,8 @@ VSL.add([
      "Aluminium"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-metals"
  },
  {
   "id": "g6-thermalrods",
@@ -3502,7 +3509,8 @@ VSL.add([
      "Water"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-indicators"
  },
  {
   "id": "g6-rainbow",
@@ -4009,7 +4017,8 @@ VSL.add([
      "Magnets"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-echo"
  },
  {
   "id": "g6-soundreflect",
@@ -4297,7 +4306,8 @@ VSL.add([
      "It is the real thing"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-eclipse"
  },
  {
   "id": "g6-mould",
@@ -4389,7 +4399,8 @@ VSL.add([
      "Number of days"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-mould"
  },
  {
   "id": "g6-fruitdecay",
@@ -5012,7 +5023,8 @@ VSL.add([
      "Carbon dioxide"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-gastests"
  },
  {
   "id": "g6-co2test",
@@ -5086,7 +5098,8 @@ VSL.add([
      "iron"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-gastests"
  },
  {
   "id": "g6-o2test",
@@ -5172,7 +5185,8 @@ VSL.add([
      "stops the reaction"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-gastests"
  },
  {
   "id": "g6-neutral",
@@ -5265,7 +5279,8 @@ VSL.add([
     ]
    }
   ],
-  "sim": "labs/neutralisation.html"
+  "sim": "labs/neutralisation.html",
+  "classic": "classic/index.html#g6-neutral"
  },
  {
   "id": "g6-tablets",
@@ -5560,7 +5575,8 @@ VSL.add([
      "Light"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-conductors"
  },
  {
   "id": "g6-seriescurrent",
@@ -5732,7 +5748,8 @@ VSL.add([
      "Zero after the lamp"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-cells"
  },
  {
   "id": "g6-lamps",
@@ -5824,7 +5841,8 @@ VSL.add([
      "Stay the same"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g6-lamps"
  },
  {
   "id": "g6-electronmodel",

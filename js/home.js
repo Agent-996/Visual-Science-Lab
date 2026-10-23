@@ -36,7 +36,7 @@
     const grade = V.GRADES[state.grade];
     const q = state.query.trim().toLowerCase();
     const all = V.forGrade(state.grade);
-    const shown = all.filter((p) => (state.subject === 'all' || V.subjectOf(p.unit) === state.subject) && (!state.simOnly || p.sim) && matches(p, q));
+    const shown = all.filter((p) => (state.subject === 'all' || V.subjectOf(p.unit) === state.subject) && (!state.simOnly || p.sim || p.classic) && matches(p, q));
 
     const box = document.getElementById('units');
     box.replaceChildren();
@@ -55,7 +55,8 @@
         h('div', { class: 'p-cards' }, list.map((p) => h('a', { class: 'p-card', href: `practical.html#${p.id}` },
           h('span', { class: 'p-title', text: p.title }),
           h('span', { class: 'p-meta' },
-            p.sim ? h('span', { class: 'pill pill-sim', text: 'Interactive' }) : null,
+            p.sim ? h('span', { class: 'pill pill-sim', text: 'Virtual lab' }) : null,
+            p.classic ? h('span', { class: 'pill pill-slides', text: 'Interactive slides' }) : null,
             h('span', { class: 'pill', text: V.TYPES[p.type] }),
             h('span', { class: 'pill', text: `${p.mins} min` }),
             done[p.id] ? h('span', { class: 'pill pill-done', text: '✓ Done' }) : null),
@@ -65,7 +66,7 @@
       box.append(h('p', { class: 'empty-state', text: 'No practicals match. Try a different word or code, or clear the filters.' }));
     }
 
-    const sims = all.filter((p) => p.sim).length;
+    const sims = all.filter((p) => p.sim || p.classic).length;
     const doneCount = all.filter((p) => done[p.id]).length;
     document.getElementById('summary').textContent = shown.length === all.length
       ? `${grade.name} (${grade.stage}): ${all.length} practicals, ${sims} interactive, ${doneCount} done on this device.`

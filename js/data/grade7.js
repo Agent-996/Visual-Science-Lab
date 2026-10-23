@@ -97,7 +97,8 @@ VSL.add([
      "Respiring"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-lungs"
  },
  {
   "id": "g7-lungdissection",
@@ -397,7 +398,8 @@ VSL.add([
      "Both in the lungs only"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-exhaled"
  },
  {
   "id": "g7-peas",
@@ -921,7 +923,8 @@ VSL.add([
      "To save time"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-solubility"
  },
  {
   "id": "g7-crystallising",
@@ -1082,7 +1085,8 @@ VSL.add([
      "Drawn in ink"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-chroma"
  },
  {
   "id": "g7-leafchroma",
@@ -1436,7 +1440,8 @@ VSL.add([
      "To use more time"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-speed"
  },
  {
   "id": "g7-moments",
@@ -1531,7 +1536,8 @@ VSL.add([
      "It is shiny"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-moments"
  },
  {
   "id": "g7-turning",
@@ -2091,7 +2097,8 @@ VSL.add([
      "Exactly right"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-quadrat"
  },
  {
   "id": "g7-transect",
@@ -2724,7 +2731,8 @@ VSL.add([
      "Water is needed"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-rocksalt"
  },
  {
   "id": "g7-coppersulfate",
@@ -3161,7 +3169,8 @@ VSL.add([
      "Light bends in air"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-reflection"
  },
  {
   "id": "g7-periscope",
@@ -3518,7 +3527,8 @@ VSL.add([
      "Red"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-filters"
  },
  {
   "id": "g7-addingcolours",
@@ -3805,7 +3815,8 @@ VSL.add([
      "Nothing"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-foodtests"
  },
  {
   "id": "g7-unknownfoods",
@@ -4035,7 +4046,8 @@ VSL.add([
      "Water"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-foodenergy"
  },
  {
   "id": "g7-smoking",
@@ -4331,7 +4343,8 @@ VSL.add([
      "It reacts"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-exoendo"
  },
  {
   "id": "g7-handwarmers",
@@ -4624,7 +4637,8 @@ VSL.add([
      "It is magnetic"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-reactivity"
  },
  {
   "id": "g7-burningmetals",
@@ -5249,7 +5263,8 @@ VSL.add([
      "Stays magnetic for ever"
     ]
    }
-  ]
+  ],
+  "classic": "classic/index.html#g7-electromagnet"
  },
  {
   "id": "g7-crane",
