@@ -804,7 +804,8 @@ VSL.add([
      "160 mm"
     ]
    }
-  ]
+  ],
+  "sim": "labs/cell-size.html"
  },
  {
   "id": "g6-syringes",
@@ -882,7 +883,8 @@ VSL.add([
      "Both can"
     ]
    }
-  ]
+  ],
+  "sim": "labs/compressing-syringes.html"
  },
  {
   "id": "g6-heating",
@@ -2488,7 +2490,8 @@ VSL.add([
      "It goes back into the battery"
     ]
    }
-  ]
+  ],
+  "sim": "labs/wasted-heat.html"
  },
  {
   "id": "g6-living",
@@ -2714,7 +2717,8 @@ VSL.add([
      "To kill the yeast"
     ]
    }
-  ]
+  ],
+  "sim": "labs/yeast-balloon.html"
  },
  {
   "id": "g6-key",
@@ -3238,7 +3242,8 @@ VSL.add([
      "Measure its length only"
     ]
    }
-  ]
+  ],
+  "sim": "labs/density-blocks.html"
  },
  {
   "id": "g6-alloys",
@@ -3749,7 +3754,8 @@ VSL.add([
      "They are the same"
     ]
    }
-  ]
+  ],
+  "sim": "labs/ph-meter.html"
  },
  {
   "id": "g6-vibrations",
@@ -4506,7 +4512,8 @@ VSL.add([
      "To stop the fruit drying"
     ]
    }
-  ]
+  ],
+  "sim": "labs/fruit-decay.html"
  },
  {
   "id": "g6-soildecomp",
@@ -4641,7 +4648,8 @@ VSL.add([
      "Rabbits"
     ]
    }
-  ]
+  ],
+  "sim": "labs/compost-column.html"
  },
  {
   "id": "g6-yeasttemp",
@@ -5396,7 +5404,8 @@ VSL.add([
      "kill bacteria"
     ]
    }
-  ]
+  ],
+  "sim": "labs/indigestion-tablets.html"
  },
  {
   "id": "g6-reactionmodel",

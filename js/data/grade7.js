@@ -305,7 +305,8 @@ VSL.add([
      "the oxygen used"
     ]
    }
-  ]
+  ],
+  "sim": "labs/lung-volume.html"
  },
  {
   "id": "g7-exhaled",
@@ -482,7 +483,8 @@ VSL.add([
      "glucose + carbon dioxide"
     ]
    }
-  ]
+  ],
+  "sim": "labs/germinating-peas.html"
  },
  {
   "id": "g7-hco3",
@@ -832,7 +834,8 @@ VSL.add([
      "Nothing"
     ]
    }
-  ]
+  ],
+  "sim": "labs/dissolving-rate.html"
  },
  {
   "id": "g7-solubility",
@@ -1292,7 +1295,8 @@ VSL.add([
      "they measure distance"
     ]
    }
-  ]
+  ],
+  "sim": "labs/measuring-speed.html"
  },
  {
   "id": "g7-dtgraph",
@@ -1358,7 +1362,8 @@ VSL.add([
      "mass"
     ]
    }
-  ]
+  ],
+  "sim": "labs/distance-time-graph.html"
  },
  {
   "id": "g7-speed",
@@ -1678,7 +1683,8 @@ VSL.add([
      "Push harder"
     ]
    }
-  ]
+  ],
+  "sim": "labs/feet-pressure.html"
  },
  {
   "id": "g7-claypressure",
@@ -1744,7 +1750,8 @@ VSL.add([
      "the same pressure"
     ]
    }
-  ]
+  ],
+  "sim": "labs/clay-pressure.html"
  },
  {
   "id": "g7-liquidpressure",
@@ -2179,7 +2186,8 @@ VSL.add([
      "Time of day"
     ]
    }
-  ]
+  ],
+  "sim": "labs/line-transect.html"
  },
  {
   "id": "g7-pitfall",
@@ -2316,7 +2324,8 @@ VSL.add([
      "They don’t eat anything"
     ]
    }
-  ]
+  ],
+  "sim": "labs/invasive-species.html"
  },
  {
   "id": "g7-bioaccumulation",
@@ -2452,7 +2461,8 @@ VSL.add([
      "Fish"
     ]
    }
-  ]
+  ],
+  "sim": "labs/pollution-growth.html"
  },
  {
   "id": "g7-rutherford",
@@ -2893,7 +2903,8 @@ VSL.add([
      "So they look tidy"
     ]
    }
-  ]
+  ],
+  "sim": "labs/greenhouse-jars.html"
  },
  {
   "id": "g7-weather",
@@ -2959,7 +2970,8 @@ VSL.add([
      "The instruments need rest"
     ]
    }
-  ]
+  ],
+  "sim": "labs/weather-station.html"
  },
  {
   "id": "g7-renewables",
@@ -3026,7 +3038,8 @@ VSL.add([
      "it is tilted away"
     ]
    }
-  ]
+  ],
+  "sim": "labs/solar-cell.html"
  },
  {
   "id": "g7-bioplastic",
@@ -3983,7 +3996,8 @@ VSL.add([
      "It fizzes"
     ]
    }
-  ]
+  ],
+  "sim": "labs/vitamin-c.html"
  },
  {
   "id": "g7-foodenergy",
@@ -4442,7 +4456,8 @@ VSL.add([
      "gives out light"
     ]
    }
-  ]
+  ],
+  "sim": "labs/hand-warmers.html"
  },
  {
   "id": "g7-sodium",
