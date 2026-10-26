@@ -3598,7 +3598,8 @@ VSL.add([
      "Purple"
     ]
    }
-  ]
+  ],
+  "sim": "labs/adding-colours.html"
  },
  {
   "id": "g7-craters",
@@ -3894,7 +3895,8 @@ VSL.add([
      "starch"
     ]
    }
-  ]
+  ],
+  "sim": "labs/unknown-foods.html"
  },
  {
   "id": "g7-vitaminc",
@@ -4777,7 +4779,8 @@ VSL.add([
      "Only when heated"
     ]
    }
-  ]
+  ],
+  "sim": "labs/displacement.html"
  },
  {
   "id": "g7-inert",
@@ -5041,7 +5044,8 @@ VSL.add([
      "It is shiny"
     ]
    }
-  ]
+  ],
+  "sim": "labs/magnet-poles.html"
  },
  {
   "id": "g7-compass",

@@ -372,15 +372,20 @@
   }
 
   // options[0] is the right answer; the buttons are shown in a random order.
-  function choice({ question, options, say, onDone, hint, right }) {
-    const letters = 'ABCDEF';
+  // options[0] is the right answer and the options are shuffled, unless `answer` is given:
+  // then they keep their order (colours in rainbow order, say). swatches maps an option to a colour.
+  function choice({ question, options, say, onDone, hint, right, answer, swatches }) {
+    const letters = 'ABCDEFGH';
+    const correct = answer === undefined ? options[0] : answer;
     let done = false;
-    const buttons = shuffled(options).map((o, i) => h('button', { type: 'button', class: 'option', onclick: () => pick(o) },
-      h('span', { class: 'letter' }, letters[i]), h('span', null, o)));
+    const buttons = (answer === undefined ? shuffled(options) : options).map((o, i) => h('button', { type: 'button', class: 'option', onclick: () => pick(o) },
+      h('span', { class: 'letter' }, letters[i]),
+      swatches && swatches[o] ? h('span', { class: 'swatch', style: `background:${swatches[o]}`, 'aria-hidden': 'true' }) : null,
+      h('span', null, o)));
     function pick(o, auto) {
       if (done) return;
       const b = buttons.find((x) => x.lastChild.textContent === o);
-      if (o === options[0]) {
+      if (o === correct) {
         done = true;
         b.classList.add('right');
         for (const x of buttons) x.disabled = true;
@@ -393,8 +398,8 @@
         say(hint || 'Not quite. Look at your results again.', 'warn');
       }
     }
-    const fill = h('button', { type: 'button', class: 'btn btn-quiet btn-small', onclick: () => pick(options[0], true) }, 'Fill it in for me');
-    if (autofill) setTimeout(() => pick(options[0], true), 400 / timeScale);
+    const fill = h('button', { type: 'button', class: 'btn btn-quiet btn-small', onclick: () => pick(correct, true) }, 'Fill it in for me');
+    if (autofill) setTimeout(() => pick(correct, true), 400 / timeScale);
     return h('div', { class: 'question' }, h('p', { class: 'q-text' }, question), h('div', { class: 'options' }, buttons), h('div', null, fill));
   }
 

@@ -83,6 +83,48 @@
       return { g, set(t) { text.textContent = t; } };
     },
 
+    // A test tube standing with its rounded bottom on y = bottom. setLevel takes 0–1; setColour any
+    // CSS colour; setSolid(f, colour) shows a layer of solid (a precipitate) filling f of the tube.
+    tube(cx, bottom, w, ht, colour) {
+      const clipId = 'tb' + Math.random().toString(36).slice(2, 8);
+      const r = w / 2;
+      const outline = `M${cx - r},${bottom - ht} L${cx - r},${bottom - r} A${r},${r} 0 0 0 ${cx + r},${bottom - r} L${cx + r},${bottom - ht}`;
+      const liquid = s('rect', { x: cx - r, width: w, fill: colour, 'clip-path': `url(#${clipId})` });
+      const solid = s('rect', { x: cx - r, width: w, height: 0, y: bottom, 'clip-path': `url(#${clipId})` });
+      const grains = s('line', { x1: cx - r + 2, x2: cx + r - 2, stroke: 'rgba(60, 70, 80, 0.45)', 'stroke-width': 2.5, 'stroke-dasharray': '1.5 2.5', visibility: 'hidden' });
+      const g = s('g', null,
+        s('defs', null, s('clipPath', { id: clipId }, s('path', { d: `${outline} Z` }))),
+        liquid,
+        solid,
+        grains,
+        s('path', { d: outline, ...GLASS, fill: 'none' }),
+        s('ellipse', { cx, cy: bottom - ht, rx: r + 2, ry: 2.5, ...GLASS, fill: 'none' }));
+      const api = {
+        g,
+        setLevel(f) {
+          const top = bottom - (ht - 6) * clamp(f, 0, 1);
+          liquid.setAttribute('y', top);
+          liquid.setAttribute('height', Math.max(0, bottom - top));
+          return api;
+        },
+        setColour(c) {
+          liquid.setAttribute('fill', c);
+          return api;
+        },
+        setSolid(f, c) {
+          const top = bottom - (ht - 6) * clamp(f, 0, 1);
+          solid.setAttribute('y', top);
+          solid.setAttribute('height', Math.max(0, bottom - top));
+          if (c) solid.setAttribute('fill', c);
+          grains.setAttribute('y1', top + 1.5);
+          grains.setAttribute('y2', top + 1.5);
+          grains.setAttribute('visibility', f > 0.01 ? 'visible' : 'hidden');
+          return api;
+        },
+      };
+      return api;
+    },
+
     hit: (x, y, width, height) => s('rect', { class: 'hit', x, y, width, height, rx: 8 }),
   };
 

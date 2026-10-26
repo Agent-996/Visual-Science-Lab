@@ -18,7 +18,7 @@ Every practical page also has two activities built from its data: **pick the equ
 
 Interactive versions come in two kinds:
 
-**Virtual labs**: a lab bench where students use the equipment and take their own readings, with a results table and graph.
+**Virtual labs**: a lab bench where students use the equipment and either take their own readings (with a results table and graph) or do a set of tests and record what they see.
 
 | Virtual lab | Grade · Unit | Codes |
 | --- | --- | --- |
@@ -27,9 +27,13 @@ Interactive versions come in two kinds:
 | [Weight and mass with a newtonmeter](labs/weight-and-mass.html) | Grade 6 · 3 Forces and energy | 7Pf.03 |
 | [Woodlice choice chamber](labs/woodlice.html) | Grade 6 · 4 Grouping and identifying organisms | 7Bp.01 |
 | [Thermal conductivity rods](labs/thermal-conductors.html) | Grade 6 · 5 Properties of materials | 7Cp.05 |
+| [Universal indicator rainbow](labs/indicator-rainbow.html) | Grade 6 · 5 Properties of materials | 7Cp.03 |
 | [Reflection of sound from different surfaces](labs/sound-reflection.html) | Grade 6 · 6 Earth physics | 7Ps.02 |
+| [Sound through solids, liquids and gases](labs/sound-media.html) | Grade 6 · 6 Earth physics | 7Ps.01 |
 | [Yeast activity at different temperatures](labs/yeast-temperature.html) | Grade 6 · 7 Microorganisms in the environment | 7Be.01 |
+| [What decomposes in soil?](labs/soil-decomposition.html) | Grade 6 · 7 Microorganisms in the environment | 7Be.01 |
 | [Neutralisation drop by drop](labs/neutralisation.html) | Grade 6 · 8 Changes to materials | 7Cc.04 |
+| [Making precipitates](labs/precipitates.html) | Grade 6 · 8 Changes to materials | 7Cc.02 |
 | [Current in a series circuit](labs/series-current.html) | Grade 6 · 9 Electricity | 7Pe.03 |
 | [Breathing rate before and after exercise](labs/breathing-rate.html) | Grade 7 · 1 Respiration | 8Bs.03 |
 | [Diffusion rate and temperature](labs/diffusion-temperature.html) | Grade 7 · 3 Forces and energy | 8Pf.07 |
@@ -38,6 +42,10 @@ Interactive versions come in two kinds:
 | [Purity and boiling point](labs/boiling-point.html) | Grade 7 · 5 Materials and their structure | 8Cm.04 |
 | [Refraction through a glass block](labs/refraction.html) | Grade 7 · 6 Light | 8Ps.02 |
 | [Crater formation](labs/craters.html) | Grade 7 · 6 Light | 8ESs.02 |
+| [Adding colours of light](labs/adding-colours.html) | Grade 7 · 6 Light | 8Ps.04 |
+| [Identifying unknown foods](labs/unknown-foods.html) | Grade 7 · 7 Diet and growth | 8Bp.01 |
+| [Displacement reactions](labs/displacement.html) | Grade 7 · 8 Chemical reactions | 8Cc.03 |
+| [Attraction and repulsion between poles](labs/magnet-poles.html) | Grade 7 · 9 Magnetism | 8Pe.01 |
 
 **Interactive slides**: the earlier Virtual Science Lab (in `classic/`) has 31 five-slide activities (aim, predict, do it, conclude, check). Each opens directly from its practical page.
 
@@ -79,6 +87,8 @@ js/practical.js         draws one practical's page
 js/labkit.js            toolkit for virtual labs: step guide, answer checking, magnified scales, graphs
 js/investigate.js       a reusable investigation bench (change a variable, measure, table, graph, conclusion)
 js/sims/*.js            virtual labs built on the investigation bench (one short file each)
+js/observe.js           a reusable observe-and-test bench (test each sample, record what you see, conclusion)
+js/tests/*.js           virtual labs built on the observe-and-test bench
 js/labs/*.js            virtual labs with their own custom steps
 labs/*.html             one page per virtual lab
 classic/index.html      the earlier Virtual Science Lab slide activities
@@ -86,6 +96,6 @@ classic/index.html      the earlier Virtual Science Lab slide activities
 
 To change a practical's text, edit its entry in `js/data/grade6.js` or `js/data/grade7.js`. In `check` and `predict` questions, the first option is the right answer; the page shuffles the options.
 
-To add a virtual lab for an investigation, copy one of the files in `js/sims/` (for example `diffusion-temperature.js`): describe the scene, the values of the variable you change, what happens in one measurement and the conclusion question. If the variable you change is a list of names (for example metals or surfaces), add `categorical: true` and the results are drawn as a bar chart. Copy its page in `labs/`, then add `"sim": "labs/your-lab.html"` to the practical's entry in the data file. Labs that need their own sequence of steps live in `js/labs/`.
+To add a virtual lab for an investigation, copy one of the files in `js/sims/` (for example `diffusion-temperature.js`): describe the scene, the values of the variable you change, what happens in one measurement and the conclusion question. If the variable you change is a list of names (for example metals or surfaces), add `categorical: true` and the results are drawn as a bar chart. Copy its page in `labs/`, then add `"sim": "labs/your-lab.html"` to the practical's entry in the data file. For a practical where students test several samples and record what they see (colours, attract or repel, positive or negative), copy one of the files in `js/tests/` instead (for example `indicator-rainbow.js`): list the samples, what happens in one test and the questions to ask about each sample. Its page loads `js/observe.js`. Labs that need their own sequence of steps live in `js/labs/`.
 
 Adding `?speed=4` to a lab's address makes the simulation run four times faster, which helps when testing.

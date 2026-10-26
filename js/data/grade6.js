@@ -3585,7 +3585,8 @@ VSL.add([
      "Dark blue"
     ]
    }
-  ]
+  ],
+  "sim": "labs/indicator-rainbow.html"
  },
  {
   "id": "g6-cabbage",
@@ -3925,7 +3926,8 @@ VSL.add([
      "Sound only travels through air"
     ]
    }
-  ]
+  ],
+  "sim": "labs/sound-media.html"
  },
  {
   "id": "g6-echo",
@@ -4538,7 +4540,8 @@ VSL.add([
      "They feed too many worms"
     ]
    }
-  ]
+  ],
+  "sim": "labs/soil-decomposition.html"
  },
  {
   "id": "g6-compost",
@@ -4949,7 +4952,8 @@ VSL.add([
      "very hot"
     ]
    }
-  ]
+  ],
+  "sim": "labs/precipitates.html"
  },
  {
   "id": "g6-hydrogen",
