@@ -2238,7 +2238,8 @@ VSL.add([
      "fish"
     ]
    }
-  ]
+  ],
+  "sim": "labs/pitfall-traps.html"
  },
  {
   "id": "g7-invasive",
@@ -2370,7 +2371,8 @@ VSL.add([
      "evaporate"
     ]
    }
-  ]
+  ],
+  "sim": "labs/bioaccumulation.html"
  },
  {
   "id": "g7-pollution",
@@ -2509,7 +2511,8 @@ VSL.add([
      "a solid structure throughout"
     ]
    }
-  ]
+  ],
+  "sim": "labs/gold-foil-model.html"
  },
  {
   "id": "g7-static",
@@ -3241,7 +3244,8 @@ VSL.add([
      "Pilots"
     ]
    }
-  ]
+  ],
+  "sim": "labs/periscope.html"
  },
  {
   "id": "g7-refraction",
@@ -3734,7 +3738,8 @@ VSL.add([
      "Andromeda"
     ]
    }
-  ]
+  ],
+  "sim": "labs/solar-system-scale.html"
  },
  {
   "id": "g7-foodtests",
@@ -4260,7 +4265,8 @@ VSL.add([
      "breaks"
     ]
    }
-  ]
+  ],
+  "sim": "labs/model-arm.html"
  },
  {
   "id": "g7-exoendo",
@@ -4912,7 +4918,8 @@ VSL.add([
      "above the arrow"
     ]
    }
-  ]
+  ],
+  "sim": "labs/word-equations.html"
  },
  {
   "id": "g7-fieldlines",
@@ -5342,6 +5349,7 @@ VSL.add([
      "heats the bell"
     ]
    }
-  ]
+  ],
+  "sim": "labs/electromagnet-crane.html"
  }
 ]);

@@ -729,7 +729,8 @@ VSL.add([
      "It has labels"
     ]
    }
-  ]
+  ],
+  "sim": "labs/cell-models.html"
  },
  {
   "id": "g6-cellsize",
@@ -1395,7 +1396,8 @@ VSL.add([
      "The Moon"
     ]
    }
-  ]
+  ],
+  "sim": "labs/water-cycle.html"
  },
  {
   "id": "g6-elements-model",
@@ -1466,7 +1468,8 @@ VSL.add([
      "an element"
     ]
    }
-  ]
+  ],
+  "sim": "labs/elements-compounds.html"
  },
  {
   "id": "g6-ironsulfur",
@@ -1928,7 +1931,8 @@ VSL.add([
      "Air"
     ]
    }
-  ]
+  ],
+  "sim": "labs/orbit-model.html"
  },
  {
   "id": "g6-gravitywell",
@@ -1995,7 +1999,8 @@ VSL.add([
      "The sheet is too big"
     ]
    }
-  ]
+  ],
+  "sim": "labs/gravity-sheet.html"
  },
  {
   "id": "g6-parachute",
@@ -2228,7 +2233,8 @@ VSL.add([
      "Four"
     ]
    }
-  ]
+  ],
+  "sim": "labs/tides-model.html"
  },
  {
   "id": "g6-energycircus",
@@ -2299,7 +2305,8 @@ VSL.add([
      "It increases"
     ]
    }
-  ]
+  ],
+  "sim": "labs/energy-circus.html"
  },
  {
   "id": "g6-bounce",
@@ -2539,7 +2546,8 @@ VSL.add([
      "Having legs"
     ]
    }
-  ]
+  ],
+  "sim": "labs/living-things.html"
  },
  {
   "id": "g6-woodlice",
@@ -2845,7 +2853,8 @@ VSL.add([
      "As many as you like"
     ]
    }
-  ]
+  ],
+  "sim": "labs/build-a-key.html"
  },
  {
   "id": "g6-quadratsurvey",
@@ -2914,7 +2923,8 @@ VSL.add([
      "Throw them away"
     ]
    }
-  ]
+  ],
+  "sim": "labs/quadrat-survey.html"
  },
  {
   "id": "g6-virus",
@@ -2979,7 +2989,8 @@ VSL.add([
      "the same size"
     ]
    }
-  ]
+  ],
+  "sim": "labs/virus-model.html"
  },
  {
   "id": "g6-metals",
@@ -3346,7 +3357,8 @@ VSL.add([
      "make it a gas"
     ]
    }
-  ]
+  ],
+  "sim": "labs/alloy-model.html"
  },
  {
   "id": "g6-indicatorpaper",
@@ -4223,7 +4235,8 @@ VSL.add([
      "only in oceans"
     ]
    }
-  ]
+  ],
+  "sim": "labs/plate-boundaries.html"
  },
  {
   "id": "g6-eclipse",
@@ -4750,7 +4763,8 @@ VSL.add([
      "Spider"
     ]
    }
-  ]
+  ],
+  "sim": "labs/leaf-litter-food-web.html"
  },
  {
   "id": "g6-signs",
@@ -4884,7 +4898,8 @@ VSL.add([
      "cannot be reversed"
     ]
    }
-  ]
+  ],
+  "sim": "labs/physical-chemical.html"
  },
  {
   "id": "g6-precipitates",
@@ -5427,7 +5442,8 @@ VSL.add([
      "water"
     ]
    }
-  ]
+  ],
+  "sim": "labs/reaction-model.html"
  },
  {
   "id": "g6-buildcircuits",
@@ -5503,7 +5519,8 @@ VSL.add([
      "They are bigger"
     ]
    }
-  ]
+  ],
+  "sim": "labs/circuit-diagrams.html"
  },
  {
   "id": "g6-conductors",
@@ -5921,7 +5938,8 @@ VSL.add([
      "light"
     ]
    }
-  ]
+  ],
+  "sim": "labs/rope-model.html"
  },
  {
   "id": "g6-alarm",
@@ -5988,6 +6006,7 @@ VSL.add([
      "Plastic"
     ]
    }
-  ]
+  ],
+  "sim": "labs/buzzer-alarm.html"
  }
 ]);
