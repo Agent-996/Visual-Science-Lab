@@ -316,6 +316,36 @@ VSL.results = {
    ]
   }
  },
+ "g6-cellsize": {
+  "rows": [
+   [
+    "Onion cell",
+    "250 µm"
+   ],
+   [
+    "Pondweed cell",
+    "110 µm"
+   ],
+   [
+    "Cheek cell",
+    "60 µm"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-cellsize-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-cellsize-results.webp",
+   "size": [
+    430,
+    591
+   ]
+  }
+ },
  "g6-cheek": {
   "rows": [
    [
@@ -361,6 +391,32 @@ VSL.results = {
    "size": [
     430,
     239
+   ]
+  }
+ },
+ "g6-compost": {
+  "rows": [
+   [
+    "At the start",
+    "20 cm"
+   ],
+   [
+    "After 6 weeks",
+    "13 cm"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-compost-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-compost-results.webp",
+   "size": [
+    430,
+    708
    ]
   }
  },
@@ -417,6 +473,44 @@ VSL.results = {
    "size": [
     430,
     926
+   ]
+  }
+ },
+ "g6-density": {
+  "rows": [
+   [
+    "Aluminium",
+    "2.7 g/cm³"
+   ],
+   [
+    "Iron",
+    "7.9 g/cm³"
+   ],
+   [
+    "Copper",
+    "9.0 g/cm³"
+   ],
+   [
+    "Wood",
+    "0.7 g/cm³"
+   ],
+   [
+    "Acrylic",
+    "1.2 g/cm³"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-density-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-density-results.webp",
+   "size": [
+    430,
+    667
    ]
   }
  },
@@ -623,6 +717,40 @@ VSL.results = {
    "size": [
     430,
     378
+   ]
+  }
+ },
+ "g6-fruitdecay": {
+  "rows": [
+   [
+    "4 °C",
+    "14 days"
+   ],
+   [
+    "12 °C",
+    "8 days"
+   ],
+   [
+    "20 °C",
+    "5 days"
+   ],
+   [
+    "30 °C",
+    "3 days"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-fruitdecay-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-fruitdecay-results.webp",
+   "size": [
+    430,
+    594
    ]
   }
  },
@@ -897,6 +1025,48 @@ VSL.results = {
    "size": [
     430,
     813
+   ]
+  }
+ },
+ "g6-phmeter": {
+  "rows": [
+   [
+    "Lemon juice",
+    "pH 2.3"
+   ],
+   [
+    "Vinegar",
+    "pH 2.9"
+   ],
+   [
+    "Milk",
+    "pH 6.6"
+   ],
+   [
+    "Tap water",
+    "pH 7.2"
+   ],
+   [
+    "Baking soda",
+    "pH 8.3"
+   ],
+   [
+    "Soap",
+    "pH 9.8"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-phmeter-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-phmeter-results.webp",
+   "size": [
+    430,
+    670
    ]
   }
  },
@@ -1416,6 +1586,70 @@ VSL.results = {
    ]
   }
  },
+ "g6-syringes": {
+  "rows": [
+   [
+    "Air",
+    "50 → 24 cm³"
+   ],
+   [
+    "Water",
+    "50 → 50 cm³"
+   ],
+   [
+    "Sand",
+    "50 → 47 cm³"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-syringes-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-syringes-results.webp",
+   "size": [
+    430,
+    556
+   ]
+  }
+ },
+ "g6-tablets": {
+  "rows": [
+   [
+    "Tablet A",
+    "18.5 cm³"
+   ],
+   [
+    "Tablet B",
+    "24 cm³"
+   ],
+   [
+    "Tablet C",
+    "12.5 cm³"
+   ],
+   [
+    "Tablet D",
+    "30.5 cm³"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-tablets-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-tablets-results.webp",
+   "size": [
+    430,
+    594
+   ]
+  }
+ },
  "g6-thermalrods": {
   "rows": [
    [
@@ -1540,6 +1774,36 @@ VSL.results = {
    ]
   }
  },
+ "g6-wastedheat": {
+  "rows": [
+   [
+    "Filament lamp",
+    "34.5 °C"
+   ],
+   [
+    "Energy-saving lamp",
+    "25.5 °C"
+   ],
+   [
+    "LED",
+    "21.5 °C"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-wastedheat-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-wastedheat-results.webp",
+   "size": [
+    430,
+    590
+   ]
+  }
+ },
  "g6-watercycle": {
   "rows": [
    [
@@ -1597,6 +1861,32 @@ VSL.results = {
    "size": [
     430,
     700
+   ]
+  }
+ },
+ "g6-yeastballoon": {
+  "rows": [
+   [
+    "No sugar",
+    "11 cm"
+   ],
+   [
+    "10 g of sugar",
+    "29 cm"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g6-yeastballoon-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g6-yeastballoon-results.webp",
+   "size": [
+    430,
+    670
    ]
   }
  },
@@ -1918,6 +2208,40 @@ VSL.results = {
    ]
   }
  },
+ "g7-claypressure": {
+  "rows": [
+   [
+    "Largest face",
+    "1 mm"
+   ],
+   [
+    "Middle face",
+    "2.5 mm"
+   ],
+   [
+    "Smallest face",
+    "5 mm"
+   ],
+   [
+    "Drawing pin point",
+    "14 mm"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-claypressure-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-claypressure-results.webp",
+   "size": [
+    430,
+    594
+   ]
+  }
+ },
  "g7-compass": {
   "rows": [
    [
@@ -2180,6 +2504,88 @@ VSL.results = {
    ]
   }
  },
+ "g7-dissolving": {
+  "rows": [
+   [
+    "At 20 °C",
+    "471 s"
+   ],
+   [
+    "At 70 °C",
+    "100 s"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-dissolving-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-dissolving-results.webp",
+   "size": [
+    430,
+    689
+   ]
+  }
+ },
+ "g7-dtgraph": {
+  "rows": [
+   [
+    "After 1.0 s",
+    "10 cm"
+   ],
+   [
+    "After 3.0 s",
+    "90 cm"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-dtgraph-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-dtgraph-results.webp",
+   "size": [
+    430,
+    742
+   ]
+  }
+ },
+ "g7-feetpressure": {
+  "rows": [
+   [
+    "Standing on two feet",
+    "300 cm²: 1.7 N/cm²"
+   ],
+   [
+    "Standing on one foot",
+    "150 cm²: 3.3 N/cm²"
+   ],
+   [
+    "On tiptoe on one foot",
+    "30 cm²: 16.7 N/cm²"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-feetpressure-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-feetpressure-results.webp",
+   "size": [
+    430,
+    590
+   ]
+  }
+ },
  "g7-fieldlines": {
   "rows": [
    [
@@ -2240,6 +2646,62 @@ VSL.results = {
    ]
   }
  },
+ "g7-greenhouse": {
+  "rows": [
+   [
+    "Air",
+    "24.2 °C (mean)"
+   ],
+   [
+    "Extra carbon dioxide",
+    "25.7 °C (mean)"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-greenhouse-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-greenhouse-results.webp",
+   "size": [
+    430,
+    570
+   ]
+  }
+ },
+ "g7-handwarmers": {
+  "rows": [
+   [
+    "Iron powder hand warmer",
+    "48 °C"
+   ],
+   [
+    "Reusable hand warmer",
+    "52.5 °C"
+   ],
+   [
+    "Instant cold pack",
+    "6 °C"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-handwarmers-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-handwarmers-results.webp",
+   "size": [
+    430,
+    609
+   ]
+  }
+ },
  "g7-hco3": {
   "rows": [
    [
@@ -2297,6 +2759,32 @@ VSL.results = {
    "size": [
     430,
     377
+   ]
+  }
+ },
+ "g7-invasive": {
+  "rows": [
+   [
+    "Year 3",
+    "56 prey"
+   ],
+   [
+    "Year 8",
+    "12 prey"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-invasive-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-invasive-results.webp",
+   "size": [
+    430,
+    837
    ]
   }
  },
@@ -2390,6 +2878,32 @@ VSL.results = {
    ]
   }
  },
+ "g7-lungvolume": {
+  "rows": [
+   [
+    "Normal breath out",
+    "0.5 L (mean of 3)"
+   ],
+   [
+    "Deepest breath out",
+    "3.1 L (mean of 3)"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-lungvolume-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-lungvolume-results.webp",
+   "size": [
+    430,
+    536
+   ]
+  }
+ },
  "g7-makeelectromagnet": {
   "rows": [
    [
@@ -2420,6 +2934,40 @@ VSL.results = {
    ]
   }
  },
+ "g7-measurespeed": {
+  "rows": [
+   [
+    "Walking",
+    "1.4 m/s"
+   ],
+   [
+    "Fast walking",
+    "2.1 m/s"
+   ],
+   [
+    "Jogging",
+    "3.6 m/s"
+   ],
+   [
+    "Running",
+    "5.6 m/s"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-measurespeed-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-measurespeed-results.webp",
+   "size": [
+    430,
+    628
+   ]
+  }
+ },
  "g7-modelarm": {
   "rows": [
    [
@@ -2443,6 +2991,36 @@ VSL.results = {
    "size": [
     430,
     256
+   ]
+  }
+ },
+ "g7-peas": {
+  "rows": [
+   [
+    "Germinating peas, day 0",
+    "20 °C"
+   ],
+   [
+    "Germinating peas, day 5",
+    "25.5 °C"
+   ],
+   [
+    "Boiled peas (control)",
+    "20 °C throughout"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-peas-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-peas-results.webp",
+   "size": [
+    430,
+    670
    ]
   }
  },
@@ -2532,6 +3110,32 @@ VSL.results = {
    ]
   }
  },
+ "g7-pollution": {
+  "rows": [
+   [
+    "No detergent",
+    "42 mm"
+   ],
+   [
+    "4% detergent",
+    "4.5 mm"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-pollution-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-pollution-results.webp",
+   "size": [
+    430,
+    650
+   ]
+  }
+ },
  "g7-prism": {
   "rows": [
    [
@@ -2611,6 +3215,32 @@ VSL.results = {
    "size": [
     430,
     813
+   ]
+  }
+ },
+ "g7-renewables": {
+  "rows": [
+   [
+    "Facing the lamp (0°)",
+    "2 V"
+   ],
+   [
+    "Side-on (90°)",
+    "0 V"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-renewables-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-renewables-results.webp",
+   "size": [
+    430,
+    708
    ]
   }
  },
@@ -2764,6 +3394,32 @@ VSL.results = {
    ]
   }
  },
+ "g7-transect": {
+  "rows": [
+   [
+    "0 m (shade)",
+    "0 daisies"
+   ],
+   [
+    "10 m (open)",
+    "11 daisies"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-transect-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-transect-results.webp",
+   "size": [
+    430,
+    706
+   ]
+  }
+ },
  "g7-turning": {
   "rows": [
    [
@@ -2851,6 +3507,70 @@ VSL.results = {
    "size": [
     430,
     285
+   ]
+  }
+ },
+ "g7-vitaminc": {
+  "rows": [
+   [
+    "Fresh orange",
+    "6 drops"
+   ],
+   [
+    "Carton orange",
+    "11 drops"
+   ],
+   [
+    "Lemon",
+    "8 drops"
+   ],
+   [
+    "Apple",
+    "25 drops"
+   ],
+   [
+    "Boiled orange",
+    "18 drops"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-vitaminc-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-vitaminc-results.webp",
+   "size": [
+    430,
+    651
+   ]
+  }
+ },
+ "g7-weather": {
+  "rows": [
+   [
+    "Highest this week",
+    "23.5 °C"
+   ],
+   [
+    "Lowest this week",
+    "16.5 °C"
+   ]
+  ],
+  "bench": {
+   "src": "img/results/g7-weather-bench.webp",
+   "size": [
+    720,
+    442
+   ]
+  },
+  "results": {
+   "src": "img/results/g7-weather-results.webp",
+   "size": [
+    430,
+    742
    ]
   }
  },
