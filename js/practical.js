@@ -109,6 +109,16 @@
         return;
       }
       resultBox.append(h('p', { class: 'find-text', text: p.find }));
+      const ex = V.results && V.results[p.id];
+      if (ex && ex.bench) {
+        const img = (pic, alt) => h('img', { src: pic.src, width: pic.size[0], height: pic.size[1], alt, loading: 'lazy' });
+        resultBox.append(h('figure', { class: 'example-results' },
+          h('div', { class: 'example-shots' },
+            img(ex.bench, `The virtual lab bench at the end of the practical: ${p.title}.`),
+            img(ex.results, `Example results table${ex.results.size[1] > 500 ? ' and graph' : ''}.`)),
+          h('figcaption', null, 'Example results from the virtual lab. Your own results may be a little different.'),
+          ex.rows.length ? h('dl', { class: 'example-rows' }, ...ex.rows.flatMap(([k, v]) => [h('dt', { text: k }), h('dd', { text: v })])) : null));
+      }
       const mine = V.predictions()[p.id];
       if (p.predict && mine) {
         const right = mine === p.predict.o[0];

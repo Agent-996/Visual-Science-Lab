@@ -646,6 +646,14 @@ table.data .muted { color: var(--ink-3); }
 .score-line { margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--good-soft); font-weight: 700; }
 .reveal-box { display: flex; flex-direction: column; gap: 10px; }
 .find-text { margin: 0; padding: 12px 14px; border-left: 4px solid var(--subject); background: var(--surface-2); border-radius: 0 10px 10px 0; }
+.example-results { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.example-shots { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 10px; align-items: start; }
+.example-shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; }
+.example-results figcaption { color: var(--ink-3); font-size: 0.9rem; }
+.example-rows { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; padding: 10px 14px; background: var(--surface-2); border-radius: 10px; }
+.example-rows dt { color: var(--ink-2); }
+.example-rows dd { margin: 0; font-weight: 600; }
+@media (max-width: 560px) { .example-shots { grid-template-columns: 1fr; } }
 .gap-line { margin: 0; line-height: 2.2; }
 .gap { display: inline-flex; flex-wrap: wrap; gap: 4px; vertical-align: middle; margin: 0 2px; }
 .gap button { appearance: none; cursor: pointer; padding: 2px 10px; border: 1.5px solid var(--line-2); border-radius: 8px; background: var(--surface); font: 600 0.95rem var(--font-body); color: var(--ink); }
