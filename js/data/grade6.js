@@ -204,7 +204,8 @@ VSL.add([
      "The iodine removed them"
     ]
    }
-  ]
+  ],
+  "sim": "labs/onion-cells.html"
  },
  {
   "id": "g6-cheek",
@@ -288,7 +289,8 @@ VSL.add([
      "To stain them blue"
     ]
    }
-  ]
+  ],
+  "sim": "labs/cheek-cells.html"
  },
  {
   "id": "g6-pondlife",
@@ -367,7 +369,8 @@ VSL.add([
      "It cannot move"
     ]
    }
-  ]
+  ],
+  "sim": "labs/pond-life.html"
  },
  {
   "id": "g6-specialised",
@@ -440,7 +443,8 @@ VSL.add([
      "Ciliated cell"
     ]
    }
-  ]
+  ],
+  "sim": "labs/specialised-cells.html"
  },
  {
   "id": "g6-roothairs",
@@ -511,7 +515,8 @@ VSL.add([
      "They keep insects away"
     ]
    }
-  ]
+  ],
+  "sim": "labs/root-hairs.html"
  },
  {
   "id": "g6-chloroplasts",
@@ -579,7 +584,8 @@ VSL.add([
      "Stains do not work on leaves"
     ]
    }
-  ]
+  ],
+  "sim": "labs/chloroplasts.html"
  },
  {
   "id": "g6-stomata",
@@ -652,7 +658,8 @@ VSL.add([
      "Nitrogen"
     ]
    }
-  ]
+  ],
+  "sim": "labs/stomata.html"
  },
  {
   "id": "g6-cellmodels",

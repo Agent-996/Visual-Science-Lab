@@ -688,7 +688,8 @@ VSL.add([
      "Clot blood only"
     ]
    }
-  ]
+  ],
+  "sim": "labs/blood-smear.html"
  },
  {
   "id": "g7-dilution",
