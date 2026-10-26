@@ -1119,7 +1119,8 @@ VSL.add([
      "Both"
     ]
    }
-  ]
+  ],
+  "sim": "labs/evaporation-boiling.html"
  },
  {
   "id": "g6-diffusion",
@@ -1184,7 +1185,8 @@ VSL.add([
      "cold water than hot water"
     ]
    }
-  ]
+  ],
+  "sim": "labs/diffusion-smell-crystal.html"
  },
  {
   "id": "g6-can",
@@ -1258,7 +1260,8 @@ VSL.add([
      "It turns into air"
     ]
    }
-  ]
+  ],
+  "sim": "labs/collapsing-can.html"
  },
  {
   "id": "g6-belljar",
@@ -1330,7 +1333,8 @@ VSL.add([
      "a mixture"
     ]
    }
-  ]
+  ],
+  "sim": "labs/balloon-vacuum.html"
  },
  {
   "id": "g6-watercycle",
@@ -1637,7 +1641,8 @@ VSL.add([
      "Add more water"
     ]
    }
-  ]
+  ],
+  "sim": "labs/sand-and-salt.html"
  },
  {
   "id": "g6-oxygenair",
@@ -1868,7 +1873,8 @@ VSL.add([
      "Air resistance"
     ]
    }
-  ]
+  ],
+  "sim": "labs/gravity-magnetism.html"
  },
  {
   "id": "g6-orbit",
@@ -2165,7 +2171,8 @@ VSL.add([
      "they float"
     ]
    }
-  ]
+  ],
+  "sim": "labs/feather-coin.html"
  },
  {
   "id": "g6-tides",
@@ -3292,7 +3299,8 @@ VSL.add([
      "They are softer"
     ]
    }
-  ]
+  ],
+  "sim": "labs/alloy-scratch.html"
  },
  {
   "id": "g6-alloymodel",
@@ -3428,7 +3436,8 @@ VSL.add([
      "strongly alkaline"
     ]
    }
-  ]
+  ],
+  "sim": "labs/indicator-paper.html"
  },
  {
   "id": "g6-indicators",
@@ -3666,7 +3675,8 @@ VSL.add([
      "It is purple"
     ]
    }
-  ]
+  ],
+  "sim": "labs/cabbage-indicator.html"
  },
  {
   "id": "g6-phmeter",
@@ -3799,7 +3809,8 @@ VSL.add([
      "not at all"
     ]
    }
-  ]
+  ],
+  "sim": "labs/sound-vibrations.html"
  },
  {
   "id": "g6-bellvacuum",
@@ -3873,7 +3884,8 @@ VSL.add([
      "Sound becomes light"
     ]
    }
-  ]
+  ],
+  "sim": "labs/bell-vacuum.html"
  },
  {
   "id": "g6-soundmedia",
@@ -4170,7 +4182,8 @@ VSL.add([
      "Tides"
     ]
    }
-  ]
+  ],
+  "sim": "labs/convection-currents.html"
  },
  {
   "id": "g6-plates",
@@ -4830,7 +4843,8 @@ VSL.add([
      "a solvent"
     ]
    }
-  ]
+  ],
+  "sim": "labs/reaction-signs.html"
  },
  {
   "id": "g6-physchem",

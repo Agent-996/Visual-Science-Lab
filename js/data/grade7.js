@@ -168,7 +168,8 @@ VSL.add([
      "It is very dry"
     ]
    }
-  ]
+  ],
+  "sim": "labs/lung-dissection.html"
  },
  {
   "id": "g7-breathingrate",
@@ -550,7 +551,8 @@ VSL.add([
      "To add weight"
     ]
    }
-  ]
+  ],
+  "sim": "labs/hydrogencarbonate.html"
  },
  {
   "id": "g7-visking",
@@ -621,7 +623,8 @@ VSL.add([
      "Nitrogen"
     ]
    }
-  ]
+  ],
+  "sim": "labs/visking-tubing.html"
  },
  {
   "id": "g7-bloodsmear",
@@ -756,7 +759,8 @@ VSL.add([
      "saturated"
     ]
    }
-  ]
+  ],
+  "sim": "labs/dilution.html"
  },
  {
   "id": "g7-dissolving",
@@ -991,7 +995,8 @@ VSL.add([
      "The solute boils"
     ]
    }
-  ]
+  ],
+  "sim": "labs/crystallising.html"
  },
  {
   "id": "g7-chroma",
@@ -1153,7 +1158,8 @@ VSL.add([
      "starch"
     ]
    }
-  ]
+  ],
+  "sim": "labs/leaf-chromatography.html"
  },
  {
   "id": "g7-balanced",
@@ -1218,7 +1224,8 @@ VSL.add([
      "speeds up"
     ]
    }
-  ]
+  ],
+  "sim": "labs/balanced-forces.html"
  },
  {
   "id": "g7-measurespeed",
@@ -1875,7 +1882,8 @@ VSL.add([
      "Nothing"
     ]
    }
-  ]
+  ],
+  "sim": "labs/gas-pressure.html"
  },
  {
   "id": "g7-diffusiondemo",
@@ -1939,7 +1947,8 @@ VSL.add([
      "are attracted to each other"
     ]
    }
-  ]
+  ],
+  "sim": "labs/ammonia-hcl.html"
  },
  {
   "id": "g7-diffusiontemp",
@@ -2583,7 +2592,8 @@ VSL.add([
      "Atoms"
     ]
    }
-  ]
+  ],
+  "sim": "labs/static-electricity.html"
  },
  {
   "id": "g7-purity",
@@ -2814,7 +2824,8 @@ VSL.add([
      "Water"
     ]
    }
-  ]
+  ],
+  "sim": "labs/copper-sulfate-crystals.html"
  },
  {
   "id": "g7-greenhouse",
@@ -3081,7 +3092,8 @@ VSL.add([
      "are made from coal"
     ]
    }
-  ]
+  ],
+  "sim": "labs/bioplastic.html"
  },
  {
   "id": "g7-reflection",
@@ -3379,7 +3391,8 @@ VSL.add([
      "goes round corners"
     ]
    }
-  ]
+  ],
+  "sim": "labs/apparent-depth.html"
  },
  {
   "id": "g7-prism",
@@ -3443,7 +3456,8 @@ VSL.add([
      "made by the prism"
     ]
    }
-  ]
+  ],
+  "sim": "labs/prism-spectrum.html"
  },
  {
   "id": "g7-filters",
@@ -4125,7 +4139,8 @@ VSL.add([
      "a vitamin"
     ]
    }
-  ]
+  ],
+  "sim": "labs/smoking-machine.html"
  },
  {
   "id": "g7-chickenwing",
@@ -4195,7 +4210,8 @@ VSL.add([
      "To look balanced"
     ]
    }
-  ]
+  ],
+  "sim": "labs/chicken-wing.html"
  },
  {
   "id": "g7-modelarm",
@@ -4493,7 +4509,8 @@ VSL.add([
      "carbon dioxide"
     ]
    }
-  ]
+  ],
+  "sim": "labs/sodium-potassium.html"
  },
  {
   "id": "g7-calcium",
@@ -4560,7 +4577,8 @@ VSL.add([
      "gold"
     ]
    }
-  ]
+  ],
+  "sim": "labs/calcium-water.html"
  },
  {
   "id": "g7-reactivity",
@@ -4720,7 +4738,8 @@ VSL.add([
      "It smells"
     ]
    }
-  ]
+  ],
+  "sim": "labs/burning-metals.html"
  },
  {
   "id": "g7-displacement",
@@ -4854,7 +4873,8 @@ VSL.add([
      "In the middle"
     ]
    }
-  ]
+  ],
+  "sim": "labs/unreactive-metals.html"
  },
  {
   "id": "g7-wordequations",
@@ -4987,7 +5007,8 @@ VSL.add([
      "Far from the magnet"
     ]
    }
-  ]
+  ],
+  "sim": "labs/field-lines.html"
  },
  {
   "id": "g7-poles",
@@ -5118,7 +5139,8 @@ VSL.add([
      "Put it in water"
     ]
    }
-  ]
+  ],
+  "sim": "labs/make-a-compass.html"
  },
  {
   "id": "g7-makeelectromagnet",
@@ -5185,7 +5207,8 @@ VSL.add([
      "The cell"
     ]
    }
-  ]
+  ],
+  "sim": "labs/make-an-electromagnet.html"
  },
  {
   "id": "g7-electromagnet",
