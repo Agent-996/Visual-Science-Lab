@@ -235,7 +235,8 @@ VSL.add([
      "Hydrogen"
     ]
    }
-  ]
+  ],
+  "sim": "labs/breathing-rate.html"
  },
  {
   "id": "g7-lungvolume",
@@ -1602,7 +1603,8 @@ VSL.add([
      "mass × speed"
     ]
    }
-  ]
+  ],
+  "sim": "labs/turning-effect.html"
  },
  {
   "id": "g7-feetpressure",
@@ -1807,7 +1809,8 @@ VSL.add([
      "only upwards"
     ]
    }
-  ]
+  ],
+  "sim": "labs/liquid-pressure.html"
  },
  {
   "id": "g7-gaspressure",
@@ -2642,7 +2645,8 @@ VSL.add([
      "the same"
     ]
    }
-  ]
+  ],
+  "sim": "labs/boiling-point.html"
  },
  {
   "id": "g7-rocksalt",

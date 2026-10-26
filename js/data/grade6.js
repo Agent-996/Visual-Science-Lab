@@ -1706,7 +1706,8 @@ VSL.add([
      "Air dissolves in the iron"
     ]
    }
-  ]
+  ],
+  "sim": "labs/oxygen-in-air.html"
  },
  {
   "id": "g6-newtonmeter",
@@ -2617,7 +2618,8 @@ VSL.add([
      "To make it faster"
     ]
    }
-  ]
+  ],
+  "sim": "labs/woodlice.html"
  },
  {
   "id": "g6-yeastballoon",
@@ -3139,7 +3141,8 @@ VSL.add([
      "They conduct heat"
     ]
    }
-  ]
+  ],
+  "sim": "labs/thermal-conductors.html"
  },
  {
   "id": "g6-density",
@@ -4086,7 +4089,8 @@ VSL.add([
      "To keep the room warm"
     ]
    }
-  ]
+  ],
+  "sim": "labs/sound-reflection.html"
  },
  {
   "id": "g6-convection",

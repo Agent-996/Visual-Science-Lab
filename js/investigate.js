@@ -127,8 +127,8 @@
           R > 1 ? h('td', null, r.mean === null ? '' : fmt(r.mean, dp)) : null))));
       calcs.replaceChildren(...(extras.length ? [h('dl', { class: 'calc-list' }, extras.map(([k, v]) => [h('dt', null, k), h('dd', null, v)]))] : []));
       if (graph) {
-        graph.points = rows.filter((r) => r.mean !== null).map((r, i) => ({ x: r.x, y: r.mean, i }));
-        if (cfg.graph.curve !== 'none' && graph.points.length > 2) graph.curve = K.smoothCurve(graph.points);
+        graph.points = rows.map((r, i) => ({ x: cfg.iv.categorical ? i : r.x, y: r.mean, i })).filter((p) => p.y !== null);
+        if (!cfg.iv.categorical && cfg.graph.curve !== 'none' && graph.points.length > 2) graph.curve = K.smoothCurve(graph.points);
         graph.render();
       }
     }
@@ -164,8 +164,13 @@
       text: cfg.measureText,
       why: cfg.measureWhy,
       enter(box, g) {
-        if (cfg.graph && !cfg.iv.categorical) {
-          graph = new K.Graph(cfg.graph);
+        if (cfg.graph) {
+          // A categorical variable (metals, surfaces...) is drawn as a bar chart.
+          graph = new K.Graph(!cfg.iv.categorical ? cfg.graph : {
+            describe: (p) => [withUnit(fmt(p.y, dp), cfg.dv.unit), showX(rows[p.i].x)],
+            ...cfg.graph,
+            categories: cfg.iv.values.map(showX),
+          });
           document.getElementById('graph').replaceChildren(graph.el);
           graph.render();
         }

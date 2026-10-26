@@ -531,13 +531,15 @@
   }
 
   class Graph {
-    constructor({ title, xLabel, yLabel, xDomain, yDomain, xStep, yStep, describe }) {
+    // With categories, the x axis is a list of names and each point is drawn as a bar (x = index).
+    constructor({ title, xLabel, yLabel, xDomain, yDomain, xStep, yStep, describe, categories }) {
       this.W = 440;
       this.H = 320;
       this.m = { t: 16, r: 18, b: 50, l: 58 };
       this.xLabel = xLabel;
       this.yLabel = yLabel;
-      this.xDomain = xDomain || [0, 1];
+      this.categories = categories || null;
+      this.xDomain = categories ? [-0.5, categories.length - 0.5] : xDomain || [0, 1];
       this.yDomain = yDomain || [0, 1];
       this.xStep = xStep;
       this.yStep = yStep;
@@ -573,10 +575,14 @@
       const yt = niceTicks(this.yDomain[0], this.yDomain[1], 6, this.yStep);
       const xdp = decimalsFor(xt.step);
       const ydp = decimalsFor(yt.step);
-      for (const x of xt.ticks) {
-        const px = this.sx(x);
-        out.push(s('line', { class: 'g-grid', x1: px, x2: px, y1: m.t, y2: H - m.b }));
-        out.push(s('text', { class: 'g-tick', x: px, y: H - m.b + 17, 'text-anchor': 'middle' }, x.toFixed(xdp)));
+      if (this.categories) {
+        this.categories.forEach((c, i) => out.push(s('text', { class: 'g-tick', x: this.sx(i), y: H - m.b + 17, 'text-anchor': 'middle' }, c)));
+      } else {
+        for (const x of xt.ticks) {
+          const px = this.sx(x);
+          out.push(s('line', { class: 'g-grid', x1: px, x2: px, y1: m.t, y2: H - m.b }));
+          out.push(s('text', { class: 'g-tick', x: px, y: H - m.b + 17, 'text-anchor': 'middle' }, x.toFixed(xdp)));
+        }
       }
       for (const y of yt.ticks) {
         const py = this.sy(y);
@@ -588,7 +594,7 @@
       out.push(s('line', { class: 'g-axis', x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b }));
       out.push(s('line', { class: 'g-axis', x1: m.l, x2: m.l, y1: m.t, y2: H - m.b }));
       if (xAxisAt !== this.yDomain[0]) out.push(s('line', { class: 'g-zero', x1: m.l, x2: W - m.r, y1: this.sy(xAxisAt), y2: this.sy(xAxisAt) }));
-      if (yAxisAt !== this.xDomain[0]) out.push(s('line', { class: 'g-zero', x1: this.sx(yAxisAt), x2: this.sx(yAxisAt), y1: m.t, y2: H - m.b }));
+      if (!this.categories && yAxisAt !== this.xDomain[0]) out.push(s('line', { class: 'g-zero', x1: this.sx(yAxisAt), x2: this.sx(yAxisAt), y1: m.t, y2: H - m.b }));
       out.push(s('text', { class: 'g-label', x: (m.l + W - m.r) / 2, y: H - 10, 'text-anchor': 'middle' }, this.xLabel));
       out.push(s('text', { class: 'g-label', transform: `translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`, 'text-anchor': 'middle' }, this.yLabel));
 
@@ -610,11 +616,16 @@
         out.push(s('circle', { class: 'g-mark', cx: px, cy: py, r: 9 }));
         if (mk.label) out.push(s('text', { class: 'g-mark-text', x: px + (mk.dx ?? 12), y: py + (mk.dy ?? -12), 'text-anchor': mk.anchor || 'start' }, mk.label));
       }
+      const base = this.sy(clamp(0, this.yDomain[0], this.yDomain[1]));
+      const barW = this.categories ? Math.min(56, (this.sx(1) - this.sx(0)) * 0.6) : 0;
       for (const p of this.points) {
         const px = this.sx(p.x);
         const py = this.sy(p.y);
         const [value, label] = this.describe(p);
-        const hit = s('circle', { class: 'g-hit', cx: px, cy: py, r: 12, tabindex: '0', 'aria-label': `${label}: ${value}` });
+        const bar = { x: px - barW / 2, y: Math.min(py, base), width: barW, height: Math.max(1, Math.abs(base - py)) };
+        const hit = this.categories
+          ? s('rect', { class: 'g-hit', ...bar, tabindex: '0', 'aria-label': `${label}: ${value}` })
+          : s('circle', { class: 'g-hit', cx: px, cy: py, r: 12, tabindex: '0', 'aria-label': `${label}: ${value}` });
         const show = () => {
           this.tip.replaceChildren(h('strong', null, value), h('br'), h('span', null, label));
           this.tip.style.left = (px / W) * 100 + '%';
@@ -626,7 +637,9 @@
         hit.addEventListener('pointerleave', hide);
         hit.addEventListener('focus', show);
         hit.addEventListener('blur', hide);
-        out.push(hit, s('circle', { class: 'g-point' + (p.off ? ' off' : ''), cx: px, cy: py, r: 5, 'pointer-events': 'none' }));
+        out.push(hit, this.categories
+          ? s('rect', { class: 'g-bar', ...bar, 'pointer-events': 'none' })
+          : s('circle', { class: 'g-point' + (p.off ? ' off' : ''), cx: px, cy: py, r: 5, 'pointer-events': 'none' }));
       }
       this.svg.replaceChildren(...out);
     }

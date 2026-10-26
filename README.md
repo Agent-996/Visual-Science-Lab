@@ -22,12 +22,20 @@ Interactive versions come in two kinds:
 
 | Virtual lab | Grade · Unit | Codes |
 | --- | --- | --- |
-| [Weight and mass with a newtonmeter](labs/weight-and-mass.html) | Grade 6 · 3 Forces and energy | 7Pf.03 |
 | [Cooling curve of stearic acid](labs/cooling-curve.html) | Grade 6 · 2 Materials and their structure | 7Cm.06 |
+| [Percentage of oxygen in air](labs/oxygen-in-air.html) | Grade 6 · 2 Materials and their structure | 7ESp.03 |
+| [Weight and mass with a newtonmeter](labs/weight-and-mass.html) | Grade 6 · 3 Forces and energy | 7Pf.03 |
+| [Woodlice choice chamber](labs/woodlice.html) | Grade 6 · 4 Grouping and identifying organisms | 7Bp.01 |
+| [Thermal conductivity rods](labs/thermal-conductors.html) | Grade 6 · 5 Properties of materials | 7Cp.05 |
+| [Reflection of sound from different surfaces](labs/sound-reflection.html) | Grade 6 · 6 Earth physics | 7Ps.02 |
 | [Yeast activity at different temperatures](labs/yeast-temperature.html) | Grade 6 · 7 Microorganisms in the environment | 7Be.01 |
 | [Neutralisation drop by drop](labs/neutralisation.html) | Grade 6 · 8 Changes to materials | 7Cc.04 |
 | [Current in a series circuit](labs/series-current.html) | Grade 6 · 9 Electricity | 7Pe.03 |
+| [Breathing rate before and after exercise](labs/breathing-rate.html) | Grade 7 · 1 Respiration | 8Bs.03 |
 | [Diffusion rate and temperature](labs/diffusion-temperature.html) | Grade 7 · 3 Forces and energy | 8Pf.07 |
+| [Turning effects: opening a door](labs/turning-effect.html) | Grade 7 · 3 Forces and energy | 8Pf.04 |
+| [Pressure in liquids: water jets](labs/liquid-pressure.html) | Grade 7 · 3 Forces and energy | 8Pf.06 |
+| [Purity and boiling point](labs/boiling-point.html) | Grade 7 · 5 Materials and their structure | 8Cm.04 |
 | [Refraction through a glass block](labs/refraction.html) | Grade 7 · 6 Light | 8Ps.02 |
 | [Crater formation](labs/craters.html) | Grade 7 · 6 Light | 8ESs.02 |
 
@@ -55,6 +63,8 @@ python3 -m http.server 8000
 
 Then visit <http://localhost:8000>.
 
+Everything the site needs, including its fonts, is inside this folder. Nothing loads from Google or any other outside service, so the site also works offline and in places where those services are blocked.
+
 ## How it is built
 
 ```
@@ -76,6 +86,6 @@ classic/index.html      the earlier Virtual Science Lab slide activities
 
 To change a practical's text, edit its entry in `js/data/grade6.js` or `js/data/grade7.js`. In `check` and `predict` questions, the first option is the right answer; the page shuffles the options.
 
-To add a virtual lab for an investigation, copy one of the files in `js/sims/` (for example `diffusion-temperature.js`): describe the scene, the values of the variable you change, what happens in one measurement and the conclusion question. Copy its page in `labs/`, then add `"sim": "labs/your-lab.html"` to the practical's entry in the data file. Labs that need their own sequence of steps live in `js/labs/`.
+To add a virtual lab for an investigation, copy one of the files in `js/sims/` (for example `diffusion-temperature.js`): describe the scene, the values of the variable you change, what happens in one measurement and the conclusion question. If the variable you change is a list of names (for example metals or surfaces), add `categorical: true` and the results are drawn as a bar chart. Copy its page in `labs/`, then add `"sim": "labs/your-lab.html"` to the practical's entry in the data file. Labs that need their own sequence of steps live in `js/labs/`.
 
 Adding `?speed=4` to a lab's address makes the simulation run four times faster, which helps when testing.
